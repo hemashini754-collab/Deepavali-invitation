@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #4b001f;
+    color: #ffd875;
+    font-family: Georgia, serif;
+    text-align: center;
+}
+
+.container {
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #ffd875;
+    font-size: 35px;
+}
+
+.gift {
+    font-size: 120px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.invitation {
+    display: none;
+    padding: 35px 20px;
+    min-height: 100vh;
+    background: linear-gradient(
+        #650025,
+        #300014
+    );
+}
+
+.invitation h1 {
+    font-size: 38px;
+}
+
+.message {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.details {
+    border: 2px solid #ffd875;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 30px 5px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    color: #fff0b0;
+    font-size: 30px;
+}
+
+.creator {
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 18px;
+}
+/* Fireworks background */
+
+.fireworks {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.fireworks::before,
+.fireworks::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: transparent;
+
+    box-shadow:
+        0 -55px #ffd700,
+        39px -39px #ff9933,
+        55px 0 #ffffff,
+        39px 39px #ffcc00,
+        0 55px #ff9933,
+        -39px 39px #ffffff,
+        -55px 0 #ffd700,
+        -39px -39px #ff9933;
+
+    animation: fireworks 2.5s infinite;
+}
+
+.fireworks::before {
+    left: 25%;
+    top: 30%;
+}
+
+.fireworks::after {
+    left: 75%;
+    top: 55%;
+    animation-delay: 1.2s;
+}
+
+@keyframes fireworks {
+    0% {
+        transform: scale(0.1) rotate(0deg);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5) rotate(90deg);
+        opacity: 0;
+    }
+}
